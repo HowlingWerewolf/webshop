@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+  	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h3>Cart</h3>
+	
+	<h:form id="item1form">
+	 	<h:commandButton value="Remove last item" action="#{cartBean.removeLastItem()}" />
+	</h:form>
+	
+	<h:dataTable value="#{cartBean.cartItemList}" var="item">
+	    <h:column>	  
+	    	<p:outputLabel value="#{item}" />
+	    	<h:form>
+	    		<h:commandButton value="Remove last item" action="#{cartBean.removeItem(item)}" />	
+	    	</h:form>	        
+	    </h:column>
+	</h:dataTable>
+</h:body>
+</html>
